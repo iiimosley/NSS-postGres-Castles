@@ -1,0 +1,32 @@
+[
+    {
+        "first_name": "Rick",
+        "last_name": "Flair",
+        "beach_id": 3
+    },
+    {
+        "first_name": "Sarah",
+        "last_name": "Silverman",
+        "beach_id": 4
+    },
+    {
+        "first_name": "Bobcat",
+        "last_name": "Golthwait",
+        "beach_id": 1
+    },
+    {
+        "first_name": "Hannibal",
+        "last_name": "Buress",
+        "beach_id": 5
+    },
+    {
+        "first_name": "Kathryn",
+        "last_name": "Hahn",
+        "beach_id": 2
+    },
+    {
+        "first_name": "Emma",
+        "last_name": "Goldman",
+        "beach_id": 6
+    }
+]

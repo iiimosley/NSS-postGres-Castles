@@ -1,0 +1,32 @@
+[
+    {
+        "castle_type": "Roman Fortress",
+        "beach_id": 2,
+        "tool_id": 4
+    },
+    {
+        "castle_type": "Cinderella",
+        "beach_id": 5,
+        "tool_id": 1
+    },
+    {
+        "castle_type": "Oblong",
+        "beach_id": 6,
+        "tool_id": 2
+    },
+    {
+        "castle_type": "Minimalist",
+        "beach_id": 3,
+        "tool_id": 3
+    },
+    {
+        "castle_type": "Turtle-Shaped",
+        "beach_id": 1,
+        "tool_id": 5
+    },
+    {
+        "castle_type": "Skyscraper",
+        "beach_id": 4,
+        "tool_id": 6
+    }
+]
