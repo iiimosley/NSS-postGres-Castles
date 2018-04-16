@@ -19,6 +19,7 @@ $ nodemon app.js
 + Open the browser to `localhost:3000` or wherever you set your port
 
 ### API
+#### BEACHES
 + To view all beaches
 ```
 localhost:3000/beaches
@@ -27,6 +28,39 @@ localhost:3000/beaches
 ```
 localhost:3000/beaches/<#id>
 ```
+  + Your returned data should be formatted like so...
+```
+{
+  "id": 2,
+  "name": "PCB",
+  "location": "Florida",
+  "sand_rating": 2,
+  "Lifeguards.name": "Kathryn Hahn"
+}
+```
++ To add a beach, send a POST request with your API tool (eg, Postman) to...
+```
+localhost:3000/beaches
+```
+  + with the following JSON formatted data
+  ```
+  {
+      "name": "<name of beach, in quotes>",
+      "location": "<name of state or country>",
+      "sand_rating": <integer rating 1-10, no quotes>
+  }
+  ```
+  + the data returned should match this formatting
+  ```
+  {
+    "id": 9,
+    "name": "Homer",
+    "location": "Alaska",
+    "sand_rating": 5
+  }
+  ```
+
+#### LIFEGUARDS
 + To view all lifeguards
 ```
 localhost:3000/lifeguards
@@ -35,6 +69,39 @@ localhost:3000/lifeguards
 ```
 localhost:3000/lifeguards/<#id>
 ```
+  + Your returned data should be formatted like so...
+```
+{
+"id": 3,
+"first_name": "Bobcat",
+"last_name": "Golthwait",
+"beach_id": 1,
+"Beach.name": "Waikiki"
+}
+```
++ To add a lifeguard, send a POST request with your API tool to...
+```
+localhost:3000/lifeguards
+```
+  + with the following JSON formatted data
+  ```
+  {
+      "first_name": "<first name>",
+      "last_name": "<last name>",
+      "beach_id": <integer>   ///please check all @ .../beaches for accurate id's
+  }
+  ```
+  + the data returned should match this formatting
+  ```
+    {
+    "id": 7,
+    "first_name": "Jermaine",
+    "last_name": "Clement",
+    "beach_id": 3
+    }
+  ```
+
+#### SANDCASTLES
 + To view all sandcastles
 ```
 localhost:3000/sandcastles
@@ -43,6 +110,8 @@ localhost:3000/sandcastles
 ```
 localhost:3000/sandcastles/<#id>
 ```
+
+#### TOOLS
 + To view all tools
 ```
 localhost:3000/tools
