@@ -3,6 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const Sequelize = require('sequelize');
 
 app.set('models', require('./models'));
 const { Beach, Castle, Lifeguard, Tool } = app.get('models');
@@ -11,7 +12,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/beaches', (req, res, next) => {
-    Beach.findAll()
+    Beach.findAll({
+        include: [{ model: Lifeguard, attributes: [[Sequelize.fn('concat', Sequelize.col('first_name'), ' ', Sequelize.col('last_name')), 'name']] }]
+    })
     .then(beaches => res.status(200).json(beaches))
     .catch(err => res.status(500).json(err));
 });
@@ -20,6 +23,7 @@ app.get('/beaches/:id', (req, res, next) => {
     Beach.findOne({
         raw: true,
         where: { id: req.params.id },
+        include: [{ model: Lifeguard, attributes: [[Sequelize.fn('concat', Sequelize.col('first_name'), ' ', Sequelize.col('last_name')), 'name']] }]
     }).then(beach => res.status(200).json(beach))
         .catch(err => res.status(500).json(err));
 });
