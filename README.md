@@ -18,27 +18,27 @@ $ nodemon app.js
 ``` 
 + Open the browser to `localhost:3000` or wherever you set your port
 
-### API
+## API
 #### BEACHES
-+ To view all beaches
+**GET:** To view all beaches
 ```
 localhost:3000/beaches
 ```
-+ To view a beach by id
+**GET:** To view a beach by ID
 ```
 localhost:3000/beaches/<#id>
 ```
   + Your returned data should be formatted like so...
-```
-{
-  "id": 2,
-  "name": "PCB",
-  "location": "Florida",
-  "sand_rating": 2,
-  "Lifeguards.name": "Kathryn Hahn"
-}
-```
-+ To add a beach, send a POST request with your API tool (eg, Postman) to...
+  ```
+  {
+    "id": 2,
+    "name": "PCB",
+    "location": "Florida",
+    "sand_rating": 2,
+    "Lifeguards.name": "Kathryn Hahn"
+  }
+  ```
+**POST:** To add a beach, send a POST request with your API tool (eg, Postman) to...
 ```
 localhost:3000/beaches
 ```
@@ -50,7 +50,7 @@ localhost:3000/beaches
       "sand_rating": <integer rating 1-10, no quotes>
   }
   ```
-  + the data returned should match this formatting
+  + data returned should match this formatting
   ```
   {
     "id": 9,
@@ -61,11 +61,11 @@ localhost:3000/beaches
   ```
 
 #### LIFEGUARDS
-+ To view all lifeguards
+**GET:** To view all lifeguards
 ```
 localhost:3000/lifeguards
 ```
-+ To view a lifeguard by id
+**GET:** To view a lifeguard by ID
 ```
 localhost:3000/lifeguards/<#id>
 ```
@@ -79,7 +79,7 @@ localhost:3000/lifeguards/<#id>
 "Beach.name": "Waikiki"
 }
 ```
-+ To add a lifeguard, send a POST request with your API tool to...
+**POST:** To add a lifeguard, send a POST request with your API tool to...
 ```
 localhost:3000/lifeguards
 ```
@@ -91,7 +91,7 @@ localhost:3000/lifeguards
       "beach_id": <integer>   ///please check all @ .../beaches for accurate id's
   }
   ```
-  + the data returned should match this formatting
+  + data returned should match this formatting
   ```
     {
     "id": 7,
@@ -102,21 +102,21 @@ localhost:3000/lifeguards
   ```
 
 #### SANDCASTLES
-+ To view all sandcastles
+**GET:** To view all sandcastles
 ```
 localhost:3000/sandcastles
 ```
-+ To view a sandcastle by id
+**GET:** To view a sandcastle by id
 ```
 localhost:3000/sandcastles/<#id>
 ```
 
 #### TOOLS
-+ To view all tools
+**GET:** To view all tools
 ```
 localhost:3000/tools
 ```
-+ To view a tool by id
+**GET:** To view a tool by id
 ```
 localhost:3000/tools/<#id>
 ```
