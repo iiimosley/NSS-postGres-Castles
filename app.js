@@ -11,6 +11,9 @@ const { Beach, Castle, Lifeguard, Tool } = app.get('models');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+
+/// BEACHES
+
 app.get('/beaches', (req, res, next) => {
     Beach.findAll({
         include: [{ model: Lifeguard, attributes: [[Sequelize.fn('concat', Sequelize.col('first_name'), ' ', Sequelize.col('last_name')), 'name']] }]
@@ -27,6 +30,15 @@ app.get('/beaches/:id', (req, res, next) => {
     }).then(beach => res.status(200).json(beach))
         .catch(err => res.status(500).json(err));
 });
+
+app.post('/beaches', (req, res, next)=>{
+    Beach.create(req.body)
+        .then(beach => res.status(201).json(beach))
+        .catch(err => res.status(501).json(err));
+});
+
+
+///LIFEGUARDS
 
 app.get('/lifeguards', (req, res, next) => {
     Lifeguard.findAll({
@@ -47,6 +59,15 @@ app.get('/lifeguards/:id', (req, res, next) => {
     .catch(err => res.status(500).json(err));
 });
 
+app.post('/lifeguards', (req, res, next) => {
+    Lifeguard.create(req.body)
+        .then(guard => res.status(201).json(guard))
+        .catch(err => res.status(501).json(err));
+});
+
+
+/// SANDCASTLES
+
 app.get('/sandcastles', (req, res, next) => {
     Castle.findAll()
     .then(castles => res.status(200).json(castles))
@@ -61,6 +82,9 @@ app.get('/sandcastles/:id', (req, res, next) => {
     .then(castle => res.status(200).json(castle))
     .catch(err => res.status(500).json(err));
 });
+
+
+/// TOOLS
 
 app.get('/tools', (req, res, next) => {
     Tool.findAll()
